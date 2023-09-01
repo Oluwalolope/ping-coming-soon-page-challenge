@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root {
+    /* font size */
+    --primary-heading-size: 2rem;
+    --primary-body-size:    1rem;
+    --secondary-body-size: .8rem;
+
+    /* font family */
+    --ff: 'Libre Franklin' , sans-serif;
+
+    /* font weight */
+    --fw-light:   300;
+    --fw-medium:  600;
+    --fw-bold:    700;
+
+    /* color pallete */
+    --blue:           hsl(223, 87%, 63%);
+    --Pale-Blue:      hsl(223, 100%, 88%);
+    --Light-Red:      hsl(354, 100%, 66%);
+    --Gray:           hsl(0, 0%, 59%);
+    --Very-Dark-Blue: hsl(209, 33%, 12%);
+
+    /* spacers */
+    --small-spacing:  1rem;
+    --medium-spacing: calc(var(--small-spacing) * 2);
+    --large-spacing:  calc(var(--small-spacing) * 3);
+
+    /* border radius */
+    --br-small: 18px;
+    --br-medium: 50%;
+}
+
+/* ===========================================
+============MOBILE VIEW====================
+=========================================== */
+html {
+    height: 100%;
+}
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    text-align: center;
+    margin-top: var(--medium-spacing);
+    font-family: var(--ff);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-left: var(--small-spacing);
+    padding-right: var(--small-spacing);
+    height: 100%;
+}
+a {
+    text-decoration: none;
+}
+/* ======header====== */
+header {
+    flex: 1;
+}
+img {
+    margin-bottom: var(--small-spacing);
+}
+h1 {
+    color: var(--Gray);
+    font-size: var(--primary-heading-size);
+    margin-bottom: var(--small-spacing);
+    font-weight: var(--fw-bold);
+}
+span {
+    color: var(--Very-Dark-Blue);
+}
+p {
+    font-size: var(--primary-body-size);
+    font-weight: var(--fw-light);
+}
+/* ======main======= */
+main {
+    flex: 4;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--small-spacing);
+    margin-bottom: var(--large-spacing);
+}
+input {
+    width: 100%;
+    height: 2.5rem;
+    box-sizing: border-box;
+    border-radius: var(--br-small);
+    border: 1px solid var(--Pale-Blue);
+}
+
+/* This appears when the email is not valid */
+.error {
+    border: 1px solid var(--Light-Red);
+}
+.error-msg {
+    display: none;
+    text-align: left;
+    font-size: calc(var(--primary-body-size) * 0.7);
+    padding-left: var(--secondary-body-size);
+    color: var(--Light-Red);
+    margin-bottom: var(--small-spacing);
+}
+
+
+
+
+#emailInput {
+    margin-bottom: var(--small-spacing);
+    padding-left: var(--secondary-body-size);
+    padding-right: var(--secondary-body-size);
+}
+#submit {
+    color: white;
+    background-color: var(--blue);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.144);
+    cursor: pointer;
+}
+#submit:hover {
+    background-color: rgba(0, 0, 255, 0.5);
+}
+section {
+    width: 100%;
+    height: 200px;
+    background-image: url(images/illustration-dashboard.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* =======footer========== */
+footer{
+    flex: 1;
+}
+footer p {
+    color: var(--Gray);
+    margin-bottom: var(--small-spacing);
+}
+.social--media {
+    margin-top: var(--small-spacing);
+    margin-bottom: var(--small-spacing);
+}
+.social--media a {
+    display: inline-block;
+    text-align: center;
+    width:  30px;
+    height: 30px;
+    padding-top: 7px;
+    box-sizing: border-box;
+    border-radius: var(--br-medium);
+    background-color: white;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+}
+.social--media a:nth-child(2) {
+    margin-left: var(--small-spacing);
+    margin-right: var(--small-spacing);
+}
+.social--media a:hover {
+    color: white;
+    background-color: var(--blue);
+}
+
+/* ===============================================================
+====================DESKTOP VIEW===============================
+===============================================================*/
+@media (width > 800px) {
+    .container {
+        width: 600px;
+    }
+    /* =======main======= */
+    form {
+        flex-direction: row;
+    }
+    .input-msg {
+        flex: 2;
+    }
+    #emailInput {
+        flex: 2;
+    }
+    #submit {
+        flex: 1;
+        margin-left: var(--small-spacing);
+    }
+    section {
+        background-size: cover;
+        height: 350px;
+    }
+
+}
